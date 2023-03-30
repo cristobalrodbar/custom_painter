@@ -165,21 +165,49 @@ class _HeaderCurvoPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     // TODO: implement paint
-    final lapiz = Paint();
+
+    //gradiente
+    final Rect rect = Rect.fromCircle(center: Offset(0.0, 155.0), radius: 180);
+    final Gradient gradiente = LinearGradient(
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        colors: <Color>[
+          Color.fromARGB(255, 181, 234, 22),
+          Color.fromARGB(150, 225, 152, 6),
+          Color.fromRGBO(45, 212, 182, 1),
+        ],
+        stops: [
+          0.3,
+          0.5,
+          1.0
+        ]);
+    final lapiz = Paint()..shader = gradiente.createShader(rect);
+    //final lapiz = Paint();
+
     //propiedades
-    lapiz.color = Color.fromARGB(255, 60, 101, 36);
+    //lapiz.color = Color.fromARGB(255, 255, 0, 0);
     lapiz.style = PaintingStyle.fill;
 
     lapiz.strokeWidth = 20;
 
     final path = Path();
 
-    path.lineTo(0, size.height * 0.25);
+    //header curvo
+/*     path.lineTo(0, size.height * 0.25);
     //path.lineTo(size.width, size.height*0.25);
     path.quadraticBezierTo(
         size.width * 0.5, size.height * 0.5, size.width, size.height * 0.25);
     path.lineTo(size.width, 0);
-
+ */
+    //header wave
+    path.lineTo(0, size.height * 0.25);
+    //path.lineTo(size.width, size.height*0.25);
+    path.quadraticBezierTo(size.width * 0.25, size.height * 0.3,
+        size.width * 0.5, size.height * 0.25);
+    //path.lineTo(size.width * 0.5, 0);
+    path.quadraticBezierTo(
+        size.width * 0.75, size.height * 0.2, size.width, size.height * 0.25);
+    path.lineTo(size.width, 0);
     canvas.drawPath(path, lapiz);
   }
 
