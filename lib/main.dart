@@ -1,4 +1,6 @@
+import 'package:custom_painter/src/pages/animaciones_page.dart';
 import 'package:custom_painter/src/pages/headers_page.dart';
+import 'package:custom_painter/src/retos/cuadrado_anim.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -8,11 +10,13 @@ void main() {
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
+  //bounceout
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Diseños app',
-        home: HeadersPage());
+        home: CuadradoAnimadoPage());
   }
 }
