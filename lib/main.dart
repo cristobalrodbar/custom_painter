@@ -1,4 +1,6 @@
 import 'package:custom_painter/src/pages/animaciones_page.dart';
+import 'package:custom_painter/src/labs/circular_progress_page.dart';
+import 'package:custom_painter/src/pages/graficas_circulares_page.dart';
 import 'package:custom_painter/src/pages/headers_page.dart';
 import 'package:custom_painter/src/retos/cuadrado_anim.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +19,6 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Diseños app',
-        home: CuadradoAnimadoPage());
+        home: GraficasCircularesPage());
   }
 }
